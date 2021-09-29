@@ -1,0 +1,48 @@
+service: migala-services-gateway
+
+plugins:
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  env: ${file(config/env.yml):${self:custom.stage}, file(config/env-default.yml):${self:custom.stage}}
+  deploymentBucket: migala-backend-${self:custom.stage}-deployments
+  serviceApiKey: migala-services
+  dynamodb:
+    stages:
+      - local
+    start:
+      port: 8000
+      region: ${self:custom.region}
+      migrate: true
+      inMemory: true
+      seed: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  environment: ${self:custom.env}
+  deploymentBucket: ${self:custom.deploymentBucket}
+  logRetentionInDays: 30
+  apiKeys:
+    - ${self:provider.stage}-${self:custom.serviceApiKey}
+
+functions:
+  graphql:
+    handler: src/apollo_server.graphqlHandler
+    events:
+    - http:
+        path: graphql
+        method: any
+        cors: true
+        # private: true
+
+resources: ${file(config/resources/index.yml):${self:custom.stage}}

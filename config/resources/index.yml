@@ -1,0 +1,3 @@
+local: ${file(config/resources/local.yml)}
+dev: ${file(config/resources/dev.yml)}
+prod: ${file(config/resources/prod.yml)}

@@ -1,0 +1,29 @@
+{
+  "name": "migala-services-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "dev": "serverless offline start --stage local",
+    "dynamodb": "serverless dynamodb install --stage local"
+  },
+  "author": "David",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "^2.996.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "serverless-dynamodb-local": "^0.2.40",
+    "serverless-offline": "^8.2.0",
+    "serverless-webpack": "^5.5.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "@apollo/federation": "^0.32.0",
+    "apollo-server-core": "^3.3.0",
+    "apollo-server-lambda": "^2.23.0",
+    "merge-graphql-schemas": "^1.7.0"
+  }
+}

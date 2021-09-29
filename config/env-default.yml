@@ -1,0 +1,15 @@
+default: &default
+  REGION: ${self:custom.region}
+  FORM_RESPONSES_TABLE: ${self:custom.stage}-${self:service}-form-responses
+
+local:
+  <<: *default
+  STAGE: local
+
+dev:
+  <<: *default
+  STAGE: dev
+
+prod:
+  <<: *default
+  STAGE: prod
