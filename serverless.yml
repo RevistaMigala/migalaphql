@@ -41,7 +41,7 @@ functions:
     events:
     - http:
         path: graphql
-        method: any
+        method: post
         cors: true
         private: true
 
