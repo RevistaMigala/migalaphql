@@ -43,6 +43,6 @@ functions:
         path: graphql
         method: any
         cors: true
-        # private: true
+        private: true
 
 resources: ${file(config/resources/index.yml):${self:custom.stage}}
