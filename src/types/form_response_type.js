@@ -1,6 +1,7 @@
 const FormResponse = `
     type FormResponse {
         email: Email!
+        age: Int
         zipcode: Zipcode
         state: State
         city: String
@@ -9,14 +10,24 @@ const FormResponse = `
         phoneCountryCode: PhoneCountryCode
         electorKey: ElectorKey
         electoralDistrict: ElectoralDistrict
-        occupation: Occupation
-        occupationCategory: OccupationCategory
+        firstOccupation: Occupation
+        secondOccupation: Occupation
+        thirdOccupation: Occupation
+        firstOccupationCategory: OccupationCategory
+        secondOccupationCategory: OccupationCategory
+        thirdOccupationCategory: OccupationCategory
         workInProfession: Boolean
         schoolGrade: SchoolGrade
-        activity: Activity
-        activitiesCategory: ActivitiesCategory
+        firstActivity: Activity
+        secondActivity: Activity
+        thirdActivity: Activity
+        firstActivitiesCategory: ActivitiesCategory
+        secondActivitiesCategory: ActivitiesCategory
+        thirdActivitiesCategory: ActivitiesCategory
         compromiseLevel: CompromiseLevel
-        compromiseCategory: CompromiseCategory
+        firstCompromiseCategory: CompromiseCategory
+        secondCompromiseCategory: CompromiseCategory
+        thirdCompromiseCategory: CompromiseCategory
         activityHours: Int
         hasInternet: Boolean
         hasMobileInternet: Boolean
