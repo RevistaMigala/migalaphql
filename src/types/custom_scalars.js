@@ -5,5 +5,6 @@ const customScalars = `
     scalar PhoneCountryCode
     scalar ElectorKey
     scalar ElectoralDistrict
+    scalar Email
 `
 export default customScalars
