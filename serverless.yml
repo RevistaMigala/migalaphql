@@ -32,6 +32,19 @@ provider:
   environment: ${self:custom.env}
   deploymentBucket: ${self:custom.deploymentBucket}
   logRetentionInDays: 30
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+      Resource:
+        - Fn::GetAtt:
+          - FormResponsesTable
+          - Arn
+
   apiKeys:
     - ${self:provider.stage}-${self:custom.serviceApiKey}
   usagePlan:
