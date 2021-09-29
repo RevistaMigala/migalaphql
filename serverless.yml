@@ -34,6 +34,14 @@ provider:
   logRetentionInDays: 30
   apiKeys:
     - ${self:provider.stage}-${self:custom.serviceApiKey}
+  usagePlan:
+    quota:
+      limit: 50000
+      offset: 0
+      period: WEEK
+    throttle:
+      burstLimit: 200
+      rateLimit: 100
 
 functions:
   graphql:
@@ -41,8 +49,8 @@ functions:
     events:
     - http:
         path: graphql
-        method: any
+        method: post
         cors: true
-        # private: true
+        private: true
 
 resources: ${file(config/resources/index.yml):${self:custom.stage}}
