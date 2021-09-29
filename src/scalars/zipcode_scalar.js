@@ -20,7 +20,7 @@ const zipcodeScalar = new GraphQLScalarType({
             return zipcodeValidator(ast.value)
         }
         throw new UserInputError('Invalid argument value')
-    }
+    },
 })
 
 export default zipcodeScalar

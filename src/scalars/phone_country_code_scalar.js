@@ -20,7 +20,7 @@ const phoneCountryCodeScalar = new GraphQLScalarType({
             return phoneCountryCodeValidator(ast.value)
         }
         throw new UserInputError('Invalid argument value')
-    }
+    },
 })
 
 export default phoneCountryCodeScalar

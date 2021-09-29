@@ -4,7 +4,7 @@ import { mergeTypes } from 'merge-graphql-schemas'
 import {
     ApolloServerPluginUsageReportingDisabled,
     ApolloServerPluginLandingPageGraphQLPlayground,
-    ApolloServerPluginInlineTraceDisabled,
+    ApolloServerPluginInlineTraceDisabled
 } from 'apollo-server-core'
 import SCHEMA from 'Schema/schema'
 import QUERY from 'Schema/queries'
@@ -37,7 +37,7 @@ const server = new ApolloServer({
     plugins: [
         ApolloServerPluginUsageReportingDisabled(),
         ApolloServerPluginInlineTraceDisabled(),
-        ApolloServerPluginLandingPageGraphQLPlayground(),
+        ApolloServerPluginLandingPageGraphQLPlayground()
     ],
 })
 

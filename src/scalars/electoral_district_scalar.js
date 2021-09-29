@@ -20,7 +20,7 @@ const electoralDistrictScalar = new GraphQLScalarType({
             return electoralDistrictValidator(ast.value)
         }
         throw new UserInputError('Invalid argument value')
-    }
+    },
 })
 
 export default electoralDistrictScalar

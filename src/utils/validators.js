@@ -1,12 +1,12 @@
 const isString = (value) => {
-    return (typeof value === "string")
+    return (typeof value === 'string')
 }
 
 const stringLength = (value, min, max) => {
     return (isString(value) && value.length >= min && value.length <= max)
 }
 
-const onlyDigits = (value, min, max) => {
+const onlyDigits = (value) => {
     return (isString(value) && /^\d+$/.test(value))
 }
 

@@ -20,7 +20,7 @@ const emailScalar = new GraphQLScalarType({
             return emailValidator(ast.value)
         }
         throw new UserInputError(`Invalid argument value: ${ast.value}`)
-    }
+    },
 })
 
 export default emailScalar

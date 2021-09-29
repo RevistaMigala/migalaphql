@@ -20,7 +20,7 @@ const electorKeyScalar = new GraphQLScalarType({
             return electorKeyValidator(ast.value)
         }
         throw new UserInputError('Invalid argument value')
-    }
+    },
 })
 
 export default electorKeyScalar
