@@ -4,6 +4,7 @@ import phoneCityCodeScalar from 'Scalars/phone_city_code_scalar'
 import phoneCountryCodeScalar from 'Scalars/phone_country_code_scalar'
 import electorKeyScalar from 'Scalars/elector_key_scalar'
 import electoralDistrictScalar from 'Scalars/electoral_district_scalar'
+import emailScalar from 'Scalars/email_scalar'
 
 
 export default {
@@ -13,4 +14,5 @@ export default {
     PhoneCountryCode: phoneCountryCodeScalar,
     ElectorKey: electorKeyScalar,
     ElectoralDistrict: electoralDistrictScalar,
+    Email: emailScalar,
 }
