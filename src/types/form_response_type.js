@@ -1,6 +1,6 @@
 const FormResponse = `
     type FormResponse {
-        email: String!
+        email: Email!
         zipcode: Zipcode
         state: State
         city: String

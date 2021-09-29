@@ -1,6 +1,6 @@
 const createFormResponseInput = `
     input CreateFormResponseInput {
-        email: String!
+        email: Email!
         age: Int
         zipcode: Zipcode
         state: State
