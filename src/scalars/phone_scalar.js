@@ -20,7 +20,7 @@ const phoneScalar = new GraphQLScalarType({
             return phoneValidator(ast.value)
         }
         throw new UserInputError('Invalid argument value')
-    }
+    },
 })
 
 export default phoneScalar

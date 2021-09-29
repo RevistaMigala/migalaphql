@@ -3,7 +3,7 @@ export const aliveResolver = async (root, args, context, info) => {
     console.log('Input', args)
 
     return {
-      statusCode: 200,
-      message: 'Its aliveeeee!',
+        statusCode: 200,
+        message: 'Its aliveeeee!',
     }
 }

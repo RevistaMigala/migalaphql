@@ -1,5 +1,4 @@
 import DynamoClient from 'Services/dynamo_client'
-import { tables } from 'Data/constants'
 
 
 export default class FormResponse {
@@ -14,8 +13,8 @@ export default class FormResponse {
             table: this.dynamo.tables.responsesTable,
             item: this.formResponse,
             options: {
-                ConditionExpression: 'attribute_not_exists(email)'
-            }
+                ConditionExpression: 'attribute_not_exists(email)',
+            },
         }
 
         return this.dynamo.putItem(params)

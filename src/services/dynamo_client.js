@@ -14,7 +14,7 @@ export default class DynamoClient {
         this.tables = tables
     }
 
-    putItem({ table, item, options }) {
+    putItem ({ table, item, options }) {
         const params = {
             TableName : table,
             Item: item,
