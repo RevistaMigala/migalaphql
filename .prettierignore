@@ -1,0 +1,8 @@
+.build
+.serverless
+node_modules
+.gitignore
+.prettierrc.json
+package-lock.json
+package.json
+.env

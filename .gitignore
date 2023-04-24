@@ -9,8 +9,8 @@ package-lock.json
 # Dynamo local
 .dynamodb
 
-# Webpack
-.webpack
-
 # Env
-config/env.yml
+.env
+
+# build
+.build
