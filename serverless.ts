@@ -15,6 +15,9 @@ const serverlessConfiguration: AWS = {
       STAGE: "${self:provider.stage}",
       MONGODB_URL: "${env:MONGODB_URL}",
     },
+    httpApi: {
+      cors: true,
+    },
   },
   custom: {
     "serverless-offline": {

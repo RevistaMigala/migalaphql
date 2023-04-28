@@ -1,9 +1,7 @@
 import { ApolloServer } from "@apollo/server";
-import {
-  startServerAndCreateLambdaHandler,
-  handlers,
-} from "@as-integrations/aws-lambda";
-import plugins from "./plugins";
+import { startServerAndCreateLambdaHandler } from "@as-integrations/aws-lambda";
+import middlewareFn from "./apollo-helpers/middleware";
+import requestHandler from "./apollo-helpers/handlers";
 import { resolvers } from "./resolvers";
 import typeDefs from "./schema";
 
@@ -16,5 +14,6 @@ const server = new ApolloServer({
 
 export const handler = startServerAndCreateLambdaHandler(
   server,
-  handlers.createAPIGatewayProxyEventV2RequestHandler()
+  requestHandler,
+  { middleware: [middlewareFn] }
 );
