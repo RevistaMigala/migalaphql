@@ -1,5 +1,6 @@
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateLambdaHandler } from "@as-integrations/aws-lambda";
+import plugins from "./apollo-helpers/plugins";
 import middlewareFn from "./apollo-helpers/middleware";
 import requestHandler from "./apollo-helpers/handlers";
 import { resolvers } from "./resolvers";

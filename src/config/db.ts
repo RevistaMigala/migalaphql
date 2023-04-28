@@ -5,9 +5,8 @@ const DATABASE_URL = String(process.env.MONGODB_URL);
 const connectDB = (options: ConnectOptions) => {
   try {
     mongoose.connect(DATABASE_URL, options);
-    console.log("connected to db" + ` ${options?.dbName || "default"}`);
   } catch (error) {
-    console.error(error);
+    console.error("Db connection error", error);
     throw error;
   }
 };
