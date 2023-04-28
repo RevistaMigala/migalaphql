@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run generate && npm run prettier && env-cmd serverless offline start --stage local --reloadHandler",
+    "start": "npm run generate && npm run prettier && env-cmd serverless offline start --stage local --reloadHandler --noPrependStageInUrl",
     "generate": "graphql-codegen --config codegen.ts",
     "deploy:dev": "env-cmd serverless deploy --stage dev",
     "prettier": "prettier . --write"
