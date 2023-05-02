@@ -6,17 +6,39 @@ This project is written in NodeJS and deployed with Serverless Framework in Miga
 
 Includes:
 
-- Demographic Records Api
+- Estore grapqhql services
 
 ## Docs
 
-View the docs in [Postman docs](https://documenter.getpostman.com/view/8854000/UUy1eSWQ).
+Pending
+
+Products query:
+
+```
+query {
+    Products {
+        id
+        title
+        price
+        description
+        mainImage {
+            id
+            url
+        }
+        images {
+            id
+            url
+            position
+        }
+    }
+}
+```
 
 ## Dependencies
 
 Install the next dependencies to run this project
 
-- [Node.js](https://nodejs.org/) v14.x
+- [Node.js](https://nodejs.org/) v16.x
 
 ## How to run this project in your local
 
@@ -33,51 +55,20 @@ cp ./config/env-default.yml ./config/env.yml
 npm i
 ```
 
-4. Install the local database with the next script
+4. Start the service
 
 ```sh
-npm run dynamodb
-```
-
-5. Start the service
-
-```sh
-npm run dev
+npm start
 ```
 
 This will start the following resources:
 
-- Local Gateway at localhost:3000/local/graphql
+- Local Gateway at localhost:3010/graphql
 
 ## How to run the local graphql playground
 
-You can create a public entry point to use the graphql playground and access it in your browser at `localhost:3000/local/graphql`.
+Use apollo studio sandbox explorer: https://studio.apollographql.com/sandbox/explorer
 
-If the local client can not connect to the service, please check the url in the playground. In some versions of apollo server the service uses `localhost:3000/graphql` instead of `localhost:3000/local/graphql` and you must change it to make it work.
-
-To do this, you must include an http event in the `/serverless.yml` file:
-
-´´´
-
-# Find the functions section
-
-functions:
-graphql:
-handler: src/apollo_server.graphqlHandler
-events: - http:
-path: graphql
-method: post
-cors: true
-private: true
-
-# Add the next lines
-
-    - http:
-        path: graphql
-        method: get
-        cors: true
-
-´´´
 
 ## Deployment
 
