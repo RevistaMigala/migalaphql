@@ -5,5 +5,6 @@ export default gql`
     id: ID
     title: String
     price: Int
+    description: String
   }
 `;

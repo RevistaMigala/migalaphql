@@ -21,6 +21,7 @@ export type Scalars = {
 
 export type Product = {
   __typename?: "Product";
+  description?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["ID"]>;
   price?: Maybe<Scalars["Int"]>;
   title?: Maybe<Scalars["String"]>;
@@ -160,6 +161,11 @@ export type ProductResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes["Product"] = ResolversParentTypes["Product"]
 > = {
+  description?: Resolver<
+    Maybe<ResolversTypes["String"]>,
+    ParentType,
+    ContextType
+  >;
   id?: Resolver<Maybe<ResolversTypes["ID"]>, ParentType, ContextType>;
   price?: Resolver<Maybe<ResolversTypes["Int"]>, ParentType, ContextType>;
   title?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
