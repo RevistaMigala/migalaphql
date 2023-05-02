@@ -6,5 +6,7 @@ export default gql`
     title: String
     price: Int
     description: String
+    mainImage: ProductImage
+    images: [ProductImage]
   }
 `;

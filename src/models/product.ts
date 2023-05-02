@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { productImageSchema } from "./product-image";
 
 const { Schema } = mongoose;
 
@@ -14,6 +15,8 @@ const productSchema = new Schema({
   description: {
     type: String,
   },
+  images: [productImageSchema],
+  mainImage: productImageSchema,
 });
 
 const Product = mongoose.model("Product", productSchema);

@@ -23,8 +23,17 @@ export type Product = {
   __typename?: "Product";
   description?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["ID"]>;
+  images?: Maybe<Array<Maybe<ProductImage>>>;
+  mainImage?: Maybe<ProductImage>;
   price?: Maybe<Scalars["Int"]>;
   title?: Maybe<Scalars["String"]>;
+};
+
+export type ProductImage = {
+  __typename?: "ProductImage";
+  id?: Maybe<Scalars["ID"]>;
+  position?: Maybe<Scalars["Int"]>;
+  url?: Maybe<Scalars["String"]>;
 };
 
 export type Query = {
@@ -143,6 +152,7 @@ export type ResolversTypes = {
   ID: ResolverTypeWrapper<Scalars["ID"]>;
   Int: ResolverTypeWrapper<Scalars["Int"]>;
   Product: ResolverTypeWrapper<Product>;
+  ProductImage: ResolverTypeWrapper<ProductImage>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars["String"]>;
 };
@@ -153,6 +163,7 @@ export type ResolversParentTypes = {
   ID: Scalars["ID"];
   Int: Scalars["Int"];
   Product: Product;
+  ProductImage: ProductImage;
   Query: {};
   String: Scalars["String"];
 };
@@ -167,8 +178,28 @@ export type ProductResolvers<
     ContextType
   >;
   id?: Resolver<Maybe<ResolversTypes["ID"]>, ParentType, ContextType>;
+  images?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes["ProductImage"]>>>,
+    ParentType,
+    ContextType
+  >;
+  mainImage?: Resolver<
+    Maybe<ResolversTypes["ProductImage"]>,
+    ParentType,
+    ContextType
+  >;
   price?: Resolver<Maybe<ResolversTypes["Int"]>, ParentType, ContextType>;
   title?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ProductImageResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes["ProductImage"] = ResolversParentTypes["ProductImage"]
+> = {
+  id?: Resolver<Maybe<ResolversTypes["ID"]>, ParentType, ContextType>;
+  position?: Resolver<Maybe<ResolversTypes["Int"]>, ParentType, ContextType>;
+  url?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -185,5 +216,6 @@ export type QueryResolvers<
 
 export type Resolvers<ContextType = any> = {
   Product?: ProductResolvers<ContextType>;
+  ProductImage?: ProductImageResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
 };
